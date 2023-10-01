@@ -3,13 +3,8 @@ const scoreDisplay = document.getElementById('score');
 const restartButton = document.getElementById('restart-button');
 let score = 0;
 let timeUp = false;
-let redCrossImage; // To store the red cross image
 
 scoreDisplay.style.display = 'none';
-
-// Preload the red cross image
-redCrossImage = new Image();
-redCrossImage.src = 'red-cross.png';
 
 function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -69,7 +64,7 @@ function startGame() {
     restartButton.style.display = 'none';
     scoreDisplay.style.display = 'block';
 
-    for (let i = 0; i < 36; i++) {
+    for (let i = 0; i < 16; i++) { // Create 16 mole holes for a 4x4 grid
         createMoleHole();
     }
 
@@ -91,3 +86,4 @@ restartButton.addEventListener('click', () => {
 });
 
 startGame();
+
