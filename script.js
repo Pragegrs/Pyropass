@@ -64,7 +64,7 @@ function startGame() {
     restartButton.style.display = 'none';
     scoreDisplay.style.display = 'block';
 
-    for (let i = 0; i < 16; i++) { // Create 16 mole holes for a 4x4 grid
+    for (let i = 0; i < 9; i++) { // Create 9 mole holes for a 3x3 grid
         createMoleHole();
     }
 
