@@ -25,7 +25,7 @@ h1 {
 
 #game {
     display: grid;
-    grid-template-columns: repeat(6, 100px); /* 6x6 grid */
+    grid-template-columns: repeat(4, 100px); /* 4x4 grid */
     gap: 10px;
     margin: 0 auto;
 }
@@ -46,8 +46,8 @@ h1 {
 }
 
 .mole {
-    width: 80px; /* Adjusted for 6x6 grid */
-    height: 80px; /* Adjusted for 6x6 grid */
+    width: 80px; /* Adjusted for 4x4 grid */
+    height: 80px; /* Adjusted for 4x4 grid */
     border-radius: 50%;
     background-image: url('mole.png'); /* Set the mole image as a background */
     background-size: cover; /* Adjust the size of the background */
@@ -64,7 +64,7 @@ h1 {
 }
 
 .mole.clicked {
-    background-image: url('red-x.png'); /* Set the red X image as a background */
+    background-image: url('red-cross.png'); /* Set the red X image as a background */
     background-size: cover;
     background-repeat: no-repeat;
 }
