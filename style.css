@@ -1,71 +1,90 @@
 body {
-    font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    background-color: #232323; /* Dark background color */
     margin: 0;
     padding: 0;
-}
-
-.game-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 36px;
+    color: #fff; /* White text color */
+    margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #game {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(6, 100px); /* 6x6 grid */
+    gap: 10px;
+    margin: 0 auto;
 }
 
 .hole {
-    background-color: #a8a8a8;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    cursor: pointer;
+    border: 2px solid #000;
+    background-color: #0055aa; /* Dark blue background color */
     position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.2s;
+}
+
+.hole:hover {
+    background-color: #0077dd; /* Light blue background color on hover */
 }
 
 .mole {
-    width: 80px;
-    height: 80px;
-    background-image: url('mole.png');
+    width: 80px; /* Adjusted for 6x6 grid */
+    height: 80px; /* Adjusted for 6x6 grid */
+    border-radius: 50%;
+    background-image: url('mole.png'); /* Set the mole image as a background */
+    background-size: cover; /* Adjust the size of the background */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.mole.up {
+    display: block;
+}
+
+.mole.clicked {
+    background-image: url('red-x.png'); /* Set the red X image as a background */
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
 }
 
-#score {
+p {
+    font-size: 24px;
+    color: #fff; /* White text color */
+}
+
+#restart-button {
     font-size: 18px;
-    margin-top: 20px;
-}
-
-button {
-    font-size: 16px;
     padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #0099cc; /* Dark blue button color */
+    color: #fff; /* White text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s;
 }
 
-button:hover {
-    background-color: #0056b3;
+#restart-button:hover {
+    background-color: #0077aa; /* Light blue button color on hover */
 }
